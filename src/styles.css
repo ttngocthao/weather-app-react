@@ -115,8 +115,26 @@ div {
 } /*end media query*/
 
 @media only screen and (min-width: 1140px) {
+  .container {
+    width: 70%;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2px;
+    align-items: center;
+  }
+  .form input {
+    width: 30%;
+  }
   .moreInfo {
-    width: 50%;
     margin: 0.5rem auto;
+    border-top: none;
+  }
+  .forecast {
+    border-top: none;
+    width: 90%;
+    margin: 1rem auto;
+    border-left: 1px solid white;
   }
 } /*end media query*/

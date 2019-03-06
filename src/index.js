@@ -154,22 +154,24 @@ class App extends React.Component {
             country={this.handleChange}
             error={this.state.error}
           />
-          <div>
-            <Location city={this.state.city} country={this.state.country} />
-            <Today
-              temp={this.state.currentTemp}
-              description={this.state.currentDescription}
-              icon={this.state.currentWeatherIcon}
-              date={this.state.today}
-              min={this.state.tempMin}
-              max={this.state.tempMax}
-            />
-          </div>
-          <div className="forecast">
-            {this.renderForeCast(0)}
-            {this.renderForeCast(1)}
-            {this.renderForeCast(2)}
-            {this.renderForeCast(3)}
+          <div className="wrapper">
+            <div className="today">
+              <Location city={this.state.city} country={this.state.country} />
+              <Today
+                temp={this.state.currentTemp}
+                description={this.state.currentDescription}
+                icon={this.state.currentWeatherIcon}
+                date={this.state.today}
+                min={this.state.tempMin}
+                max={this.state.tempMax}
+              />
+            </div>
+            <div className="forecast">
+              {this.renderForeCast(0)}
+              {this.renderForeCast(1)}
+              {this.renderForeCast(2)}
+              {this.renderForeCast(3)}
+            </div>
           </div>
         </div>
       </div>
