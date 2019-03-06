@@ -2,7 +2,7 @@ import React from "react";
 const ForeCast = props => {
   return (
     <div className="forecast-detail">
-      {props.day && <h2> {props.day} </h2>}
+      <h2> {props.day} </h2>
       {props.icon && (
         <img
           alt=""
