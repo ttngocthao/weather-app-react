@@ -14,11 +14,8 @@ const Today = props => {
       {props.description && <h3>{props.description}</h3>}
       <div className="moreInfo">
         {props.date && <h4>TODAY</h4>}
-        <h4>
-          {props.min && <span>Min {props.min}&deg;C</span>}
-
-          {props.max && <span>Max {props.max}&deg;C</span>}
-        </h4>
+        <h4>{props.min && <span>Min {props.min}&deg;C</span>}</h4>
+        <h4>{props.max && <span>Max {props.max}&deg;C</span>}</h4>
       </div>
     </div>
   );

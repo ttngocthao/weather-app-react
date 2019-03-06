@@ -70,17 +70,20 @@ class App extends React.Component {
         forecastTemp: [
           future_response.list[0].main.temp,
           future_response.list[8].main.temp,
-          future_response.list[16].main.temp
+          future_response.list[16].main.temp,
+          future_response.list[24].main.temp
         ].map(temp => Math.round(temp)),
         forecastDay: [
           future_response.list[7].dt_txt,
           future_response.list[15].dt_txt,
-          future_response.list[23].dt_txt
-        ],
+          future_response.list[23].dt_txt,
+          future_response.list[31].dt_txt
+        ].map(item => this.changeDate(item)),
         forecastIcon: [
           future_response.list[0].weather[0].icon,
           future_response.list[8].weather[0].icon,
-          future_response.list[16].weather[0].icon
+          future_response.list[16].weather[0].icon,
+          future_response.list[24].weather[0].icon
         ]
       });
     }
@@ -95,7 +98,7 @@ class App extends React.Component {
     return (
       <ForeCast
         temp={this.state.forecastTemp[i]}
-        day={this.changeDate(this.state.forecastDay[i])}
+        day={this.state.forecastDay[i]}
         icon={this.state.forecastIcon[i]}
       />
     );
@@ -157,7 +160,7 @@ class App extends React.Component {
               temp={this.state.currentTemp}
               description={this.state.currentDescription}
               icon={this.state.currentWeatherIcon}
-              date={this.changeDate(this.state.today)}
+              date={this.state.today}
               min={this.state.tempMin}
               max={this.state.tempMax}
             />
@@ -166,6 +169,7 @@ class App extends React.Component {
             {this.renderForeCast(0)}
             {this.renderForeCast(1)}
             {this.renderForeCast(2)}
+            {this.renderForeCast(3)}
           </div>
         </div>
       </div>
