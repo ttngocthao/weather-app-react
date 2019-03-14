@@ -90,15 +90,18 @@ class App extends React.Component {
   };
   changeDate(dateString) {
     var dayOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    var date = new Date(dateString);
+    var date = new Date(dateString.slice(0, 10));
+    console.log(date.getDay());
+    console.log(dayOfWeek[date.getDay()]);
     return dayOfWeek[date.getDay()];
   }
-
+  //var date = new Date(fObj.list[7].dt_txt.slice(0,10))
+  //
   renderForeCast(i) {
     return (
       <ForeCast
-        temp={this.state.forecastTemp[i]}
         day={this.state.forecastDay[i]}
+        temp={this.state.forecastTemp[i]}
         icon={this.state.forecastIcon[i]}
       />
     );
@@ -145,6 +148,7 @@ class App extends React.Component {
     const appStyle = {
       backgroundImage: "url(" + imgUrl + ")"
     };
+    console.log(this.state.forecastDay);
     return (
       <div className="App" style={appStyle}>
         <div className="container">
